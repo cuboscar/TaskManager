@@ -19,13 +19,16 @@
                     <div class="card-content"><span class="card-title">Add New Material</span>
                         <div class="row">
                             <form id="task-form">
-                                <div class="input-field col s12" id="newText">
+                                <div class="input-field col s6">
                                     <div>                                    
                                         <img src="images/fa-image.jpg" alt="No image currently available">
                                     </div>
-                                    <input type="file" name="tasks" accept="image/png, image/jpeg" value="Insert Image (only png or jpeg format)">
+                                    <input type="file" name="tasks" accept="image/png, image/jpeg" placeholder="Insert Image (only png or jpeg format)">
                                 </div>
                                 <input id="addTask" type="submit" class="btn" value="Process Image">
+                                <input type="text" name="material-location" id="location-plant" placeholder="Material Location">
+                                <input type="number" name="quantity" id="material-quantity" placeholder="Material Quantity">
+
                                 <!-- Process image through Victor's AI Algorithm -->
 
                             </form>
