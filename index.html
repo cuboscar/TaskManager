@@ -38,7 +38,7 @@
                                     <div class="row">
                                         <form id="task-form">
                                                 <div class="input-field col s12" id="newImage">
-                                                    <input type="file" onchange="loadFile(event)" name="tasks" accept="image/png, image/jpeg" placeholder="Insert Image (only png or jpeg format)">
+                                                    <input type="file" onchange="loadFile(event)" name="tasks" accept="image/png, image/jpeg" >
                                                 </div>
                                                 <div class="input-field col s12" id="newImage">
                                                     <select>
@@ -51,17 +51,17 @@
                                                     </select>               
                                                 </div>
                                                 <div class="input-field col s12">
-                                                        <input id="quantity" type="text" class="validate">
-                                                        <label for="disabled">Material quantity</label>
+                                                        <input id="weight" type="number" class="validate">
+                                                        <label for="disabled">Material Weight(Kg)</label>
                                                 </div>
                                                 <div class="col">
                                                         <div style="padding-top: 10px;" class="input-field col">
-                                                                <a class="waves-effect waves-light btn-large"><i class="material-icons right">clear</i>Clear</a>
+                                                                <a class="waves-effect waves-light btn-large" id="clear"><i class="material-icons right">clear</i>Clear</a>
                                                                 <!--<input id="addTask" type="submit" class="btn teal darken-4" value="clean">-->
                                                         </div>
                                                         <div style="padding-top: 10px;" class="input-field col">
                                                                 <!--<input id="addTask" type="submit" class="btn teal darken-4" value="submit">-->
-                                                                <a class="waves-effect waves-light btn-large"><i class="material-icons right">save</i>Save</a>
+                                                                <a class="waves-effect waves-light btn-large" id="save"><i class="material-icons right">save</i>Save</a>
                                                         </div>
                                                         
                                                 </div>
