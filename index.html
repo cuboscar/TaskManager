@@ -6,46 +6,83 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Insert Image</title>
-
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
+        <link rel = "stylesheet"
+            href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel = "stylesheet"
+            href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+        <script type = "text/javascript"
+            src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+        </script> 
+        
+        <script>
+            $(document).ready(function() {
+                $('select').material_select();
+            });
+            let loadFile = function(event) {
+                let image = document.getElementById('output');
+                image.src = URL.createObjectURL(event.target.files[0]);
+            };
+        </script>
     </head>
 
     <body>
-
+        <nav>
+            <div class="nav-wrapper teal darken-3">
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="sass.html">Report</a></li>
+                    <li><a href="collapsible.html">Register</a></li>
+                </ul>
+            </div>
+        </nav>
         <div class="container">
             <div class="row">
-                <div class="card" id="main">
-                    <div class="card-content"><span class="card-title">Add New Material</span>
-                        <div class="row">
-                            <form id="task-form">
-                                <div class="input-field col s6">
-                                    <div>                                    
-                                        <img src="images/fa-image.jpg" alt="No image currently available">
-                                    </div>
-                                    <input type="file" name="tasks" accept="image/png, image/jpeg" placeholder="Insert Image (only png or jpeg format)">
-                                </div>
-                                <input id="addTask" type="submit" class="btn" value="Process Image">
-                                <input type="text" name="material-location" id="location-plant" placeholder="Material Location">
-                                
-                                <input type="number" name="weight" id="material-weight" placeholder="Material Weight (Kg)">
-
-                                <!-- Process image through Victor's AI Algorithm -->
-
-                            </form>
-                            <select name="material-list" form="task-form">
-                                    <option value="volvo">Volvo</option>
-                                    <option value="saab">Saab</option>
-                                    <option value="opel">Opel</option>
-                                    <option value="audi">Audi</option>
-                                  </select>
+                    <div class="col s4 offset-s3" style="padding-top: 105px;" id="main">
+                        <div class = "card blue accent-1">
+                            <img id="output" style="height: 300px; width: 100%; display: block;" src="placeholder.png" alt="Card image">
                         </div>
                     </div>
-                </div>
+                    <div class="col s5 " style="padding-top: 105px;" id="main">
+                            <div class = "card grey lighten-3" style="height: 400px;">
+                                <div class="card-content"><span class="card-title"><h4 class="center">New Register</h4></span>
+                                    <div class="row">
+                                        <form id="task-form">
+                                                <div class="input-field col s12" id="newImage">
+                                                    <input type="file" onchange="loadFile(event)" name="tasks" accept="image/png, image/jpeg" placeholder="Insert Image (only png or jpeg format)">
+                                                </div>
+                                                <div class="input-field col s12" id="newImage">
+                                                    <select>
+                                                        <option value = "" disabled selected>Material location</option>
+                                                        <option value = "1">New York</option>
+                                                        <option value = "2">San Francisco</option>
+                                                        <option value = "3">Los Angeles</option>
+                                                        <option value = "4">Houston</option>
+                                                        <option value = "5">Las Vegas</option>
+                                                    </select>               
+                                                </div>
+                                                <div class="input-field col s12">
+                                                        <input id="quantity" type="text" class="validate">
+                                                        <label for="disabled">Material quantity</label>
+                                                </div>
+                                                <div class="col">
+                                                        <div style="padding-top: 10px;" class="input-field col">
+                                                                <a class="waves-effect waves-light btn-large"><i class="material-icons right">clear</i>Clear</a>
+                                                                <!--<input id="addTask" type="submit" class="btn teal darken-4" value="clean">-->
+                                                        </div>
+                                                        <div style="padding-top: 10px;" class="input-field col">
+                                                                <!--<input id="addTask" type="submit" class="btn teal darken-4" value="submit">-->
+                                                                <a class="waves-effect waves-light btn-large"><i class="material-icons right">save</i>Save</a>
+                                                        </div>
+                                                        
+                                                </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                
             </div>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
         <script src="app.js"></script>
     </body>
 
